@@ -42,7 +42,9 @@ public class GraphQlProvider {
     public RuntimeWiring buildWiring() {
         return RuntimeWiring.newRuntimeWiring()
                 .type(TypeRuntimeWiring.newTypeWiring("Query")
-                    .dataFetcher("user", appDataFetcher.getUserByFirstName())).build();
+                    .dataFetcher("user", appDataFetcher.getUserByFirstName()))
+                .type(TypeRuntimeWiring.newTypeWiring("Query")
+                        .dataFetcher("users", appDataFetcher.getAllUsers())).build();
 
     }
     @Bean

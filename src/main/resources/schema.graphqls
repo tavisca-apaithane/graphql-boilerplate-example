@@ -1,5 +1,6 @@
 type Query{
     user(firstName: String): User
+    users: [User!]
 }
 
 type User {

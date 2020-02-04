@@ -25,4 +25,9 @@ public class AppDataFetcher {
                     .filter(user->user.getFirstName().equalsIgnoreCase(firstName)).findFirst();
         };
     }
+    public DataFetcher getAllUsers(){
+        return dataFetchingEnvironment->{
+            return userDataService.getAllUsers();
+        };
+    }
 }
