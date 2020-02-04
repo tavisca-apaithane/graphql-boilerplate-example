@@ -44,7 +44,9 @@ public class GraphQlProvider {
                 .type(TypeRuntimeWiring.newTypeWiring("Query")
                     .dataFetcher("user", appDataFetcher.getUserByFirstName()))
                 .type(TypeRuntimeWiring.newTypeWiring("Query")
-                        .dataFetcher("users", appDataFetcher.getAllUsers())).build();
+                        .dataFetcher("users", appDataFetcher.getAllUsers()))
+                .type(TypeRuntimeWiring.newTypeWiring("Mutation")
+                        .dataFetcher("add", appDataFetcher.addUser())).build();
 
     }
     @Bean

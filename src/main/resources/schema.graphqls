@@ -2,8 +2,11 @@ type Query{
     user(firstName: String): User
     users: [User!]
 }
-
+type Mutation{
+    add(firstName: String, lastName: String): User
+}
 type User {
+    id: ID
     firstName: String,
     lastName: String
 }

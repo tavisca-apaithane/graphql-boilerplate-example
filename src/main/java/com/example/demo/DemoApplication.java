@@ -20,7 +20,10 @@ public class DemoApplication {
 	@Bean
 	public CommandLineRunner demo(){
 		return args -> {
-			userRepository.save(new User("shubham", "paithane"));
+			User user = new User();
+			user.setFirstName("graphql");
+			user.setLastName("default-configuration");
+			userRepository.save(user);
 		};
 	}
 }

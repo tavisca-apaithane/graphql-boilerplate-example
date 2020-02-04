@@ -30,4 +30,15 @@ public class AppDataFetcher {
             return userDataService.getAllUsers();
         };
     }
+    public DataFetcher addUser(){
+        return dataFetchingEnvironment-> {
+            String firstName = dataFetchingEnvironment.getArgument("firstName");
+            String lastName = dataFetchingEnvironment.getArgument("lastName");
+            User user = new User();
+            user.setFirstName(firstName);
+            user.setLastName(lastName);
+            userRepository.save(user);
+            return user;
+        };
+    }
 }
