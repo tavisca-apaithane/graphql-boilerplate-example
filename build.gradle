@@ -1,0 +1,36 @@
+plugins {
+	id 'org.springframework.boot' version '2.2.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	compile 'com.graphql-java-kickstart:graphql-spring-boot-starter:6.0.1'
+	implementation 'com.google.guava:guava:26.0-jre'
+
+	compile 'org.postgresql:postgresql:42.2.9.jre6'
+	compile 'org.springframework.boot:spring-boot-starter-tomcat:2.2.2.RELEASE'
+	compile 'postgresql:postgresql:9.1-901-1.jdbc4'
+	compile 'org.projectlombok:lombok:1.18.10'
+	compile 'com.graphql-java-kickstart:graphql-java-tools:5.7.1'
+	compile 'com.graphql-java-kickstart:graphiql-spring-boot-starter:6.0.1'
+}
+
+test {
+	useJUnitPlatform()
+}
